@@ -37,6 +37,7 @@ describe('BookListComponent', () => {
       category: 'sport',
       description: 'asdasdasdasasd'
     });
+    fixture.detectChanges();
     expect(compiled.querySelector('h2').textContent).toContain('Book List (1)');
   });
 });
