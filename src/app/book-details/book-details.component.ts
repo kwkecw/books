@@ -10,10 +10,14 @@ import { BookStoreService } from '../services/book-store.service';
 })
 export class BookDetailsComponent implements OnInit {
   public book: Book;
+  private _category: string[];
 
   @ViewChild('bookDetailsForm') public bookDetailsForm: NgForm;
 
-  constructor(private bookStoreService: BookStoreService) { }
+  constructor(private bookStoreService: BookStoreService) {
+    const keys = Object.keys(Category);
+    this._category = keys.slice(keys.length / 2);
+  }
 
   public ngOnInit() {
     this.initializeModel();
@@ -30,6 +34,6 @@ export class BookDetailsComponent implements OnInit {
   }
 
   get Category() {
-    return Object.keys(Category);
+    return this._category;
   }
 }
