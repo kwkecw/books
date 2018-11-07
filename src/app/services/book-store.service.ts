@@ -13,7 +13,7 @@ export class BookStoreService {
   }
 
   public addBook(book: Book) {
-    this._bookStore.push(book);
+    this._bookStore.push(Object.assign({}, book);
   }
 
   get count() {

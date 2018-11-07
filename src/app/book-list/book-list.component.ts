@@ -6,11 +6,6 @@ import { BookStoreService } from '../services/book-store.service';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss']
 })
-export class BookListComponent implements OnInit {
-
+export class BookListComponent {
   constructor(public bookStoreService: BookStoreService) { }
-
-  ngOnInit() {
-  }
-
 }

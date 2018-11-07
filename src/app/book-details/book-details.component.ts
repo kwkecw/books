@@ -1,12 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Book, Category } from '../model/book';
 import { BookStoreService } from '../services/book-store.service';
-
-export interface Food {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-book-details',
@@ -15,6 +10,8 @@ export interface Food {
 })
 export class BookDetailsComponent implements OnInit {
   public book: Book;
+
+  @ViewChild('bookDetailsForm') public bookDetailsForm: NgForm;
 
   constructor(private bookStoreService: BookStoreService) { }
 
